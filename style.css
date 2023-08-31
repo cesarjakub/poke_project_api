@@ -9,6 +9,7 @@
 }
 *:focus {
     outline: none;
+    background-color: none;
 }
 
 body{
@@ -38,6 +39,7 @@ input[type=text] {
     border: none;
     border-bottom: 1px solid white;
     margin: 5px;
+    background-color: none;
 }
 
 button{
