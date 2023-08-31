@@ -10,7 +10,9 @@ $(document).ready(function(){
             success: function (result) {
               console.log(result);
               $(".karta").remove();
+              $(".photo").remove();
               $("#infocantainer").append(pokeInfo(result.name, result.id, result.height, result.weight, result.types[0].type.name));
+              $("#image").append(getImg(result.sprites.other.dream_world.front_default ,result.name));
             },
             error: function (error) {
                 console.log(error);
@@ -25,6 +27,13 @@ $(document).ready(function(){
         <h4>Height: ${height}</h4>
         <h4>Weight: ${weight}</h4>
         <h4>Type: ${type}</h4>
+    </div>`;
+        return text;
+    }
+
+    function getImg(img, name){
+        let text = `<div class="photo">
+        <img src="${img}" alt="${name}">
     </div>`;
         return text;
     }
